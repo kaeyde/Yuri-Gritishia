@@ -1,0 +1,563 @@
+/* ===================================================
+   KAEYD SEVILLA
+   Main Stylesheet
+=================================================== */
+
+/* =========================
+   Google Fonts
+========================= */
+
+:root {
+
+    --white: #ffffff;
+    --light: rgba(255,255,255,.75);
+    --border: rgba(255,255,255,.15);
+
+    --background: #050505;
+
+    --transition: .35s ease;
+
+    --container: 1450px;
+
+}
+
+
+/* =========================
+   Reset
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#000;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+/* =========================
+   Background
+========================= */
+
+.background-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.65)
+        ),
+        url("../images/hero.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    z-index:-2;
+
+}
+
+
+/* Extra dark vignette */
+
+.background-overlay::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle,
+        transparent 45%,
+        rgba(0,0,0,.45));
+
+}
+
+
+/* =========================
+   Container
+========================= */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin:auto;
+
+}
+
+
+/* =========================
+   Header
+========================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    transition:var(--transition);
+
+}
+
+header.scrolled{
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(0,0,0,.35);
+
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar{
+
+    height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+/* =========================
+   Brand
+========================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.brand img{
+
+    width:48px;
+
+}
+
+.brand .divider{
+
+    width:1px;
+
+    height:45px;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.brand h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+nav ul{
+
+    display:flex;
+
+    gap:55px;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:rgba(255,255,255,.8);
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+    transition:var(--transition);
+
+}
+
+nav a:hover{
+
+    color:#fff;
+
+}
+
+nav a.active{
+
+    color:#fff;
+
+}
+
+nav a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-18px;
+
+    width:40px;
+
+    height:2px;
+
+    background:white;
+
+}
+
+
+/* =========================
+   Message Button
+========================= */
+
+#messageButton{
+
+    width:185px;
+
+    height:56px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:transparent;
+
+    color:#fff;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    transition:var(--transition);
+
+}
+
+#messageButton:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+/* =========================
+   Hero Icon
+========================= */
+
+.hero-icon{
+
+    margin-bottom:25px;
+
+}
+
+.hero-icon img{
+
+    width:75px;
+
+}
+
+
+/* =========================
+   Hero Title
+========================= */
+
+.hero-title h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:7rem;
+
+    font-weight:500;
+
+    letter-spacing:12px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =========================
+   Description
+========================= */
+
+.hero-description{
+
+    margin-top:35px;
+
+}
+
+.hero-description p:first-child{
+
+    font-size:1.5rem;
+
+    color:#fff;
+
+}
+
+.hero-description p:last-child{
+
+    margin-top:12px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:1.15rem;
+
+}
+
+
+/* =========================
+   Hero Buttons
+========================= */
+
+.hero-buttons{
+
+    margin-top:55px;
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+/* Primary */
+
+.primary-btn{
+
+    width:250px;
+
+    height:62px;
+
+    background:white;
+
+    color:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    transition:var(--transition);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* Secondary */
+
+.secondary-btn{
+
+    width:250px;
+
+    height:62px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    transition:var(--transition);
+
+}
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+
+/* =========================
+   Scroll Indicator
+========================= */
+
+.scroll-indicator{
+
+    margin-top:-110px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.scroll-indicator p{
+
+    font-size:.85rem;
+
+    letter-spacing:8px;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.scroll-indicator img{
+
+    width:150px;
+
+}
+
+.scroll-indicator a img{
+
+    width:18px;
+
+    opacity:.75;
+
+    animation:float 2s infinite;
+
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
